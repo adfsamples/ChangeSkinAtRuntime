@@ -34,10 +34,12 @@ public class SkinSelectorBean implements Serializable {
         this.skinFamily = skinFamily;
     }
 
-    public void skinFamilyValueChanged(ValueChangeEvent valueChangeEvent) throws IOException {
-        // ValueChangeEvent is handled in the PROCESS_VALIDATIONS phase. Calling refreshPage() will skip
-        // the UPDATE_MODEL_VALUES phase which we need to update skinFamily.
-        // We have to queue this event to the INVOKE_APPLICATION phase.
+    public void skinFamilyValueChanged(ValueChangeEvent valueChangeEvent) 
+    throws IOException {
+        // ValueChangeEvent is handled in the PROCESS_VALIDATIONS phase. 
+        // Calling refreshPage() will skip the UPDATE_MODEL_VALUES phase 
+        // which we need to update skinFamily. We have to queue this event 
+        // to the INVOKE_APPLICATION phase.
         if (valueChangeEvent.getPhaseId() != PhaseId.INVOKE_APPLICATION) {
             valueChangeEvent.setPhaseId(PhaseId.INVOKE_APPLICATION);
             valueChangeEvent.queue();
