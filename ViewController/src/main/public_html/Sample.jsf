@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <af:document title="Sample.jsf" id="d1">
+        <af:form id="f1">
+            <af:decorativeBox id="db1">
+                <f:facet name="center">
+                    <af:panelFormLayout id="pfl1" labelWidth="100">
+                        <af:group id="g1">
+                            <af:selectOneRadio id="sor1" label="Select Skin" autoSubmit="true"
+                                               valueChangeListener="#{skinSelectorBean.skinFamilyValueChanged}"
+                                               value="#{skinSelectorBean.skinFamily}">
+                                <af:selectItem id="si1" label="Alta" value="alta"/>
+                                <af:selectItem id="si2" label="Skyros" value="skyros"/>
+                            </af:selectOneRadio>
+                        </af:group>
+                        <af:group id="g2">
+                            <af:inputText id="it1" label="User Name" contentStyle="width: 300px;"/>
+                            <af:inputText id="it3" label="Email" contentStyle="width: 300px;"/>
+                            <af:inputText id="it4" label="Password" secret="true" contentStyle="width: 300px;"/>
+                        </af:group>
+                        <f:facet name="footer">
+                            <af:panelGroupLayout id="pgl2">
+                                <af:button text="Register" id="b1"/>
+                                <af:button text="Cancel" id="b2"/>
+                            </af:panelGroupLayout>
+                        </f:facet>
+                    </af:panelFormLayout>
+                </f:facet>
+            </af:decorativeBox>
+        </af:form>
+    </af:document>
+</f:view>
